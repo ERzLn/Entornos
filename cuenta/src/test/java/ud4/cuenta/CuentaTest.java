@@ -113,11 +113,19 @@ public class CuentaTest {
     @Test
     public void testExtraerDinero() {
         System.out.println("extraerDinero");
-        float importe = 0.0F;
-        Cuenta instance = null;
+        float importe = 20F;
+        Cuenta instance = cuenta1;
         instance.extraerDinero(importe);
+        float resultExp=213f;
+        float real=instance.getSaldo();
+        try{
+        assertEquals(resultExp,real,0.00);
+        }catch (Error e){
+            fail("No es el saldo esperado.");
+        }
+        
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //
     }
 
     /**
